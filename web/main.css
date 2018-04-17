@@ -13,6 +13,9 @@
     padding: 0%;
     max-width: 400px;
     min-width: 300px;
+    height: 100%;
+display: flex;
+    flex-direction: column;
 }
 
 body {
@@ -29,9 +32,11 @@ html {
 }
 
 #right {
-    border-right-style: dashed;
     width: 65%;
+    display: flex;
     min-width: 500px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 main {
@@ -41,14 +46,15 @@ main {
 }
 
 #friendlist {
-    height: 55%;
+    height: 63%;
     width: 100%;
     border-bottom-style: solid;
     position: relative;
     display: flex;
     align-items: center;
     flex-direction: column;
-    
+    margin: 0px;
+
 }
 
 #friendlist h2{
@@ -73,12 +79,17 @@ main {
     text-align: center;
 }
 
+
+
 #status img{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 35%;
+    width: auto;
+    height: auto;
     margin-bottom: 5%;
+    max-width: 120px;
+    max-height: 120px;
 }
 
 #connected {
@@ -115,13 +126,13 @@ main {
     bottom: 0;
     width: 100%;
     text-align: center;
-    height: 35%;
+    height: 36%;
 }
 
 
 
 #addFriend div{
-    margin: 10px;
+    width: 100%;
 }
 
 #friendName {
@@ -158,7 +169,8 @@ main {
     min-width: 400px;
     background-color: #00189a;
     color: #FFF;
-    border-radius: 10px;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 #login input{
@@ -180,6 +192,7 @@ main {
     border-radius: 5px;
     font-family: La-chata;
     background-color: #FFF;
+    color: #00189a;
 }
 
 #login h2{
@@ -187,6 +200,7 @@ main {
     float: left;
     width: 100%;
     display: block;
+    color: #FFF;
 }
 
 
@@ -234,4 +248,55 @@ main {
     overflow: auto;
     height: 55%;
     width: 90%;
+}
+
+#sync {
+    display: block;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2px 20px;
+    background-color: lightgrey;
+    color: #2f2f2f;
+    border-radius: 5px;
+    font-family: La-chata;
+}
+
+#friendsTable {
+    width: 100%;
+    overflow: auto;
+    height: 50%;
+    border-bottom:1px solid #fafafa;
+    border-top:1px solid #fafafa;
+}
+
+#conversation {
+    width: 100%;
+    height: 94%;
+    margin-bottom: 1%;
+}
+
+#message {
+    width: 75%;
+    height: 4%;
+    font-family: La-chata;
+    color: grey;
+    border-radius: 5px;
+    border-color: grey;
+    text-align: center;
+}
+
+#sendMessage {
+    width: 20%;
+    height: 4.5%;
+    margin-left: 2%;
+    border-radius: 5px;
+    background-color: #00189a;
+    color: #FFF;
+    font-family: La-chata;
+}
+
+#loginBody {
+    
+    
 }

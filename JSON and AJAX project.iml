@@ -24,7 +24,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../jar/jackson-annotations-2.7.0.jar!/" />
+          <root url="jar://E:/jar/jackson-annotations-2.7.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -33,7 +33,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../jar/jackson-core-2.7.4.jar!/" />
+          <root url="jar://E:/jar/jackson-core-2.7.4.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -42,12 +42,13 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../jar/jackson-databind-2.7.4.jar!/" />
+          <root url="jar://E:/jar/jackson-databind-2.7.4.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
     <orderEntry type="library" name="jackson-databind-2.7.4" level="project" />
+    <orderEntry type="library" name="javax.websocket-api-1.0-rc4" level="project" />
   </component>
 </module>

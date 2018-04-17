@@ -6,9 +6,12 @@ var statusdiv = document.getElementById("connected");
 var xmlRequest = new XMLHttpRequest();
 window.onload = poll;
 
+/////////////////
+
 document.addEventListener("DOMContentLoaded", function(){
     document.getElementById('connected').style.color = "#03FF06";
     renderHTML();
+    openSocket();
 });
 
 changeButton.addEventListener("click", function () {
@@ -45,6 +48,13 @@ document.getElementById("sync").addEventListener("click", function () {
     getFriendList();
 });
 
+document.getElementById("sendMessage").addEventListener("click", function () {
+    send()
+})
+
+
+/////////////////
+
 function addJavaFriend() {
     var email = "email=" + encodeURIComponent(document.getElementById("friendName").value)
 
@@ -72,6 +82,9 @@ function changeDropdownColor() {
         document.getElementById('connected').style.color = "#FF8C00";
     }
 }
+
+///////////////
+
 
 function updateStatus() {
     var statusUTF8 = "status=" + encodeURIComponent(statusText);
@@ -131,4 +144,41 @@ function poll() {
         getFriendList();
         poll();
     }, 2000);
+}
+
+/////////////////
+
+var websocket;
+var messages = document.getElementById("messages");
+
+function openSocket(){
+    alert("Start openSocket");
+    websocket = new websocket("ws://localhost:8080/echo");
+    alert("1");
+    websocket.open = function (event) {
+        writeResponse("Connection opened");
+    }
+    alert("2");
+    websocket.onmessage = function (event) {
+        writeResponse(event.data);
+    }
+    alert("3");
+    websocket.onclose = function (event) {
+        writeResponse("Connection closed")
+    }
+    alert("Open Done");
+}
+
+function send() {
+    var text = document.getElementById("message").value;
+    websocket.send(text);
+    alert("Send message");
+}
+
+function closeSocket() {
+    websocket.close();
+}
+
+function writeResponse(text) {
+    messages.innerHTML =+ "<br/>" + text;
 }
