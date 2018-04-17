@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="application-name" content="width=device-width, initial-scale=1">
+    <title>JSON and AJAX</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <header>
+    </header>
+    <main>
+        <div id="left">
+            <div id="friendlist">
+                <h2>Friendlist</h2>
+                <table id="friends">
+                    <tr>
+                        <td>Jandeman</td>
+                        <td>Online</td>
+                    </tr>
+                </table>
+                <div id="addFriend">
+                    <div>
+                        <h3>Add Friend</h3>
+                        <label for="friendName">Email </label><input type="text" id="friendName" name="friendName">
+                        <button id="addFriendbtn">Add Friend</button>
+                        <button id="sync">Sync</button>
+                    </div>
+                </div>
+            </div>
+            <div id="status">
+                <h2>Status</h2>
+                <img src="Images/profilepic.png" alt="">
+                <div id="connected"></div>
+                <select name="options" id="dropdown">
+                    <option value="Online">Online</option>
+                    <option value="Offline">Offline</option>
+                    <option value="Away">Away</option>
+                </select>
+                <input type="text" value="Type Status" id="typeStatus" name="typeStatus">
+                <button id="statusbtn">Change status</button>
+            </div>
+        </div>
+        <div id="right">
+            <p>testtesttest</p>
+        </div>
+    </main>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
