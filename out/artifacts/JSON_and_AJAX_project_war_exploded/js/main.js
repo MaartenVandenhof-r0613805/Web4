@@ -4,13 +4,16 @@ var changeButton = document.getElementById("statusbtn");
 var friendbtn = document.getElementById("addFriendbtn")
 var statusdiv = document.getElementById("connected");
 var xmlRequest = new XMLHttpRequest();
+var currentUser = false;
 window.onload = poll;
 
-/////////////////
+/////////////////Buttons////////////////////
 
 document.addEventListener("DOMContentLoaded", function(){
     document.getElementById('connected').style.color = "#03FF06";
+    getSessionId();
     renderHTML();
+    chatUser();
     openSocket();
 });
 
@@ -49,11 +52,12 @@ document.getElementById("sync").addEventListener("click", function () {
 });
 
 document.getElementById("sendMessage").addEventListener("click", function () {
+    currentUser = true;
     send()
 })
 
 
-/////////////////
+/////////////////Status///////////////
 
 function addJavaFriend() {
     var email = "email=" + encodeURIComponent(document.getElementById("friendName").value)
@@ -83,8 +87,6 @@ function changeDropdownColor() {
     }
 }
 
-///////////////
-
 
 function updateStatus() {
     var statusUTF8 = "status=" + encodeURIComponent(statusText);
@@ -96,6 +98,8 @@ function updateStatus() {
 
     console.log("Functie is uitgevoerd");
 }
+
+///////////////Friendlist///////////////
 
 function getFriendList(){
     xmlRequest.open("GET", "Controller?action=GetFriendList", true);
@@ -146,40 +150,77 @@ function poll() {
     }, 2000);
 }
 
-/////////////////
+/////////////////Chat///////////////
 
-var websocket;
-var messages = document.getElementById("messages");
+var webSocket;
+var messages = document.getElementById("conversation");
 
 function openSocket(){
-    alert("Start openSocket");
-    websocket = new websocket("ws://localhost:8080/echo");
-    console.log("TESTESTESTESTESTEST");
-    alert("1");
-    websocket.open = function (event) {
+    webSocket = new WebSocket("ws://localhost:8080/echo");
+    webSocket.open = function (event) {
         writeResponse("Connection opened");
-    }
-    alert("2");
-    websocket.onmessage = function (event) {
-        writeResponse(event.data);
-    }
-    alert("3");
-    websocket.onclose = function (event) {
+    };
+    webSocket.onmessage = function (event) {
+        if (currentUser == true){
+            writeResponseUser(event.data);
+        } else {
+            writeResponse(event.data);
+        }
+    };
+    webSocket.onclose = function (event) {
         writeResponse("Connection closed")
     }
-    alert("Open Done");
 }
 
 function send() {
     var text = document.getElementById("message").value;
-    websocket.send(text);
-    alert("Send message");
+    webSocket.send(text);
 }
 
 function closeSocket() {
-    websocket.close();
+    webSocket.close();
 }
 
 function writeResponse(text) {
-    messages.innerHTML =+ "<br/>" + text;
+    var p = document.createElement('p')
+    var div = document.createElement('div');
+    p.innerHTML = text;
+    div.appendChild(p);
+    messages.appendChild(div);
+    messages.style.fontSize = "20";
+    currentUser = false;
+
 }
+
+function writeResponseUser(text) {
+    var p = document.createElement('p')
+    var div = document.createElement('div');
+    p.innerHTML = text;
+    p.setAttribute("id", "user");
+    div.appendChild(p);
+    messages.appendChild(div);
+    messages.style.fontSize = "20";
+    currentUser = false;
+}
+
+function getSessionId(){
+    xmlRequest.open("GET", "Controller?action=GetSessionId", true);
+    xmlRequest.onreadystatechange =getActualSession;
+    xmlRequest.send(null);
+}
+
+function getActualSession(){
+    var serverResponse = JSON.parse(xmlRequest.responseText);
+    sessionId = serverResponse[0];
+    console.log(sessionId);
+}
+
+function chatUser(){
+    console.log("IN CHATUSER vanvoor");
+    xmlRequest.open("POST", "Controller?action=ChatServer", true);
+
+    xmlRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    console.log("IN CHATUSER");
+}
+
+window.close = closeSocket;

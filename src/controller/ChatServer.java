@@ -1,5 +1,9 @@
 package controller;
 
+import domain.Person;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.websocket.OnClose;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
@@ -12,13 +16,12 @@ import java.util.Set;
 
 @ServerEndpoint("/echo") 
 public class ChatServer {
-	
+
 	private static final Set<Session> sessions = Collections.synchronizedSet(new HashSet<Session>());
-	
+	private Person user = new Person();
 	@OnOpen
     public void onOpen(Session session){
-        System.out.println("OPEN");
-        System.out.println(session.getId() + " has opened a connection"); 
+        System.out.println(session.getId() + " has opened a connection");
         sendMessageToAll("User has connected");
         try {
             session.getBasicRemote().sendText("Connection Established");
@@ -30,7 +33,6 @@ public class ChatServer {
 	
 	@OnMessage
 	public void onMessage(String message, Session session){
-        System.out.println("ONMESSAGE");
 		System.out.println("Message from " + session.getId() + ": " + message);
 	    sendMessageToAll(message);
 	}
@@ -50,4 +52,4 @@ public class ChatServer {
             }
         }
     }
- }
+}
