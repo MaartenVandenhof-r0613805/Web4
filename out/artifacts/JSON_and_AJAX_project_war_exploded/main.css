@@ -297,11 +297,6 @@ main {
 }
 
 #loginBody {
-    background-image: url(Images/BlogImage_Chat.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-blend-mode: screen;
-    background-color: #d8d8ff;
+    
     
 }

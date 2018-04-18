@@ -154,6 +154,7 @@ var messages = document.getElementById("messages");
 function openSocket(){
     alert("Start openSocket");
     websocket = new websocket("ws://localhost:8080/echo");
+    console.log("TESTESTESTESTESTEST");
     alert("1");
     websocket.open = function (event) {
         writeResponse("Connection opened");
