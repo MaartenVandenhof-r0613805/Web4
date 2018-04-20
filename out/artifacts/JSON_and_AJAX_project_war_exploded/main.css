@@ -105,6 +105,8 @@ main {
      font-family: La-chata;
      padding: 6px;
      border-radius: 5px;
+    border: 1px solid #00189a;
+
 }
 
  #dropdown {
@@ -128,6 +130,7 @@ main {
     text-align: center;
     background-color: #FFF;
     height: 150px;
+    margin-bottom: 2%;
     }
 
 
@@ -155,6 +158,7 @@ main {
     color: white;
     border-radius: 5px;
     font-family: La-chata;
+        border: 1px solid #00189a;
 }
 
 
@@ -303,8 +307,8 @@ div div p{
     font-family: La-chata;
     color: grey;
     border-radius: 5px;
-    border-color: grey;
     text-align: center;
+    border: 1px solid grey;
 }
 
 #sendMessage {
@@ -315,6 +319,8 @@ div div p{
     background-color: #00189a;
     color: #FFF;
     font-family: La-chata;
+    border: 1px solid #00189a;
+
 }
 
 #loginBody {

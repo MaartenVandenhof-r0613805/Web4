@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function(){
     document.getElementById('connected').style.color = "#03FF06";
     getSessionId();
     renderHTML();
-    chatUser();
     openSocket();
 });
 
@@ -213,14 +212,6 @@ function getActualSession(){
     var serverResponse = JSON.parse(xmlRequest.responseText);
     sessionId = serverResponse[0];
     console.log(sessionId);
-}
-
-function chatUser(){
-    console.log("IN CHATUSER vanvoor");
-    xmlRequest.open("POST", "Controller?action=ChatServer", true);
-
-    xmlRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    console.log("IN CHATUSER");
 }
 
 window.close = closeSocket;
