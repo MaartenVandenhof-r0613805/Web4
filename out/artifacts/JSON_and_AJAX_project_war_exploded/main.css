@@ -1,10 +1,11 @@
 
 @font-face {
 	font-family: 'La-chata';
-	src: url('/Fonts/la_chata/La-chata-normal.svg');
+	src: url('./Fonts/la_chata/La-chata-normal.svg');
 	font-weight: normal;
 	font-style: normal;
 }
+
 
 #left {
     width: 35%;
@@ -77,6 +78,7 @@ main {
 
 #status h2{
     text-align: center;
+    margin-bottom: 0px
 }
 
 
@@ -90,6 +92,7 @@ main {
     margin-bottom: 5%;
     max-width: 120px;
     max-height: 120px;
+    margin-bottom: 5px
 }
 
 #connected {
@@ -100,6 +103,7 @@ main {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 18px;
     background-color: #00189a;
      color: white;
      font-family: La-chata;
@@ -121,6 +125,7 @@ main {
      font-family: La-chata;
      padding: 3px;
      border-radius: 5px;
+     border: 1px solid #c7c7c7;
 }
 
 #addFriend {
@@ -130,7 +135,7 @@ main {
     text-align: center;
     background-color: #FFF;
     height: 150px;
-    margin-bottom: 2%;
+    margin-bottom: 5%;
     }
 
 
@@ -199,6 +204,7 @@ main {
     font-family: La-chata;
     background-color: #FFF;
     color: #00189a;
+    border: none;
 }
 
 #login h2{
@@ -291,13 +297,12 @@ main {
     
 }
 div div p{
-    background-color: #FFF;
     padding: 5px;
     border-radius: 5px;
     display: inline-block;
     margin: 2%;
-    color: #FFF;
-    background-color: #00189a;
+    color: #00189a;
+    background-color: #FFF;
     float: right;
 }
 
@@ -330,12 +335,12 @@ div div p{
 
 #user {
     display: inline;
-    background-color: #FFF;
+    background-color: #00189a;
     padding: 5px;
     border-radius: 5px;
     display: inline-block;
     margin: 2%;
-    color: #00189a;
+    color: #FFF;
     float: left;
 }
 
@@ -366,4 +371,11 @@ div div p{
     #conversation {
         
     }
+}
+#password {
+    border: none;
+}
+
+#email {
+    border: none;
 }
