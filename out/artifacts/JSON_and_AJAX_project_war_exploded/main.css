@@ -6,24 +6,24 @@
 	font-style: normal;
 }
 
-
 #left {
     width: 35%;
-    border-style: solid;
-    height: inherit;
+    height: 100%;
     padding: 0%;
     max-width: 400px;
     min-width: 300px;
     height: 100%;
-display: flex;
+    display: flex;
     flex-direction: column;
+    border-right: 2px solid hsl(0, 0%, 71%);
 }
 
 body {
     margin: 0;
     width: 100%;
     height: 99.7%;
-    font-family: La-chata;
+    font-family: 'Roboto Slab', serif;
+    height: 100%;
 }
 
 html {
@@ -33,23 +33,26 @@ html {
 }
 
 #right {
-    width: 65%;
+    width: 100%;
     display: flex;
     min-width: 500px;
     justify-content: center;
     flex-wrap: wrap;
+    margin: 0px;
+    padding: 0px;
 }
 
 main {
     width: 100%;
     height: inherit;
     display: flex;
+    height: 100%;
 }
 
 #friendlist {
     height: 63%;
     width: 100%;
-    border-bottom-style: solid;
+    border-bottom: 2px solid hsl(0, 0%, 71%);
     position: relative;
     display: flex;
     align-items: center;
@@ -63,12 +66,11 @@ main {
 }
 
 #status {
-    
+    font-family: 'Roboto Slab', serif;
 }
 
 #status input{
     text-align: center;
-    font-family: La-chata;
     margin: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -104,28 +106,34 @@ main {
     margin-left: auto;
     margin-right: auto;
     margin-top: 18px;
-    background-color: #00189a;
-     color: white;
-     font-family: La-chata;
-     padding: 6px;
-     border-radius: 5px;
-    border: 1px solid #00189a;
+    background-color: #FFF;
+    color: #00189a;
+    padding: 6px;
+    border: 2px solid #00189a;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    transition: 0.2s;
+}
 
+#statusbtn:hover {
+    background-color: #00189a;
+    color: #FFF;
+    font-weight: 500;
 }
 
  #dropdown {
     display: block;
-     width: 30%;
-     text-align-last: center;
-     margin: 2%;
-     margin-left: auto;
-     margin-right: auto;
-     background-color: #FFF;
-     color: #00189a;
-     font-family: La-chata;
-     padding: 3px;
-     border-radius: 5px;
-     border: 1px solid #c7c7c7;
+    width: 30%;
+    text-align-last: center;
+    margin: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFF;
+    color: #00189a;
+    padding: 3px;
+    border: 2px solid #00189a;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
 }
 
 #addFriend {
@@ -145,7 +153,7 @@ main {
 }
 
 #friendName {
-    font-family: La-chata;
+    font-family: 'Roboto Slab', serif;    
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -159,11 +167,18 @@ main {
     margin-right: auto;
     padding: 2% 20px;
     max-height: 40px;
+    background-color: #FFF;
+    color: #00189a;
+    border: 2px solid #00189a;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+#addFriendbtn:hover {
     background-color: #00189a;
-    color: white;
-    border-radius: 5px;
-    font-family: La-chata;
-        border: 1px solid #00189a;
+    color: #FFF;
+    font-weight: 500;
 }
 
 
@@ -178,10 +193,9 @@ main {
     width: 50%;
     max-width: 500px;
     min-width: 400px;
-    background-color: #00189a;
-    color: #FFF;
-    border-radius: 5px;
-    padding: 10px;
+    background-color: #FFF;
+    border: 3px solid #00189a;
+    color: grey;
 }
 
 #login input{
@@ -189,8 +203,11 @@ main {
     float: right;
     margin-bottom: 5px;
     margin-right: 5%;
-    border-radius: 5px;
     height: 25px;
+    font-family: 'Roboto Slab', serif;
+    letter-spacing: 0.5px;
+    border: 2px solid grey;
+    color: grey;
 }
 
 #login #loginbtn{
@@ -200,11 +217,18 @@ main {
     margin: 0px;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 5px;
-    font-family: La-chata;
+    font-family: 'Roboto Slab', serif;    
     background-color: #FFF;
     color: #00189a;
-    border: none;
+    border: 2px solid #00189a;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+#login #loginbtn:hover{
+    background-color: #00189a;
+    color: #FFF;
+    font-weight: 500;
 }
 
 #login h2{
@@ -213,6 +237,11 @@ main {
     width: 100%;
     display: block;
     color: #FFF;
+    letter-spacing: 1px;
+    margin-top: 0px;
+    padding: 20px 0px;
+    background-color: #00189a;
+    margin-bottom: 10px;
 }
 
 
@@ -225,12 +254,14 @@ main {
 
 .danger {
     float: left;
+    margin: 0px;
 }
 
 #login form{
     float: left;
-    margin-bottom: 5px;
     display: block;
+    margin-bottom: 20px;
+    margin-top: 30px;
 }
 
 .danger ul{
@@ -271,7 +302,6 @@ main {
     background-color: lightgrey;
     color: #2f2f2f;
     border-radius: 5px;
-    font-family: La-chata;
     visibility: hidden;
 }
 
@@ -281,15 +311,17 @@ main {
     height: 50%;
     border-bottom:1px solid #fafafa;
     border-top:1px solid #fafafa;
+    color: grey;
 }
 
 #conversation {
     width: 100%;
-    height: 94%;
-    margin-bottom: 1%;
+    height: 92%;
+    margin-bottom: 1px;
     background-color: #ededed;
     display: flex;
     flex-direction: column;
+    border-bottom: 2px solid hsl(0, 0%, 71%);
 }
 
 #conversation div {
@@ -297,85 +329,64 @@ main {
     
 }
 div div p{
-    padding: 5px;
-    border-radius: 5px;
+    padding: 8px;
     display: inline-block;
     margin: 2%;
+    margin-bottom: 0px;
+    margin-top: 1%;
     color: #00189a;
     background-color: #FFF;
     float: right;
+    font-family: 'Roboto Slab', serif;
 }
 
 #message {
     width: 75%;
     height: 4%;
-    font-family: La-chata;
     color: grey;
-    border-radius: 5px;
     text-align: center;
-    border: 1px solid grey;
+    border: 2px solid grey;
+    font-family: 'Roboto Slab', serif;
 }
 
 #sendMessage {
     width: 20%;
     height: 4.5%;
     margin-left: 2%;
-    border-radius: 5px;
-    background-color: #00189a;
-    color: #FFF;
-    font-family: La-chata;
-    border: 1px solid #00189a;
-
+    background-color: #FFF;
+    color: #00189a;
+    border: 2px solid #00189a;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    transition: 0.2s;
 }
 
-#loginBody {
-    
-    
+#sendMessage:hover {
+    background-color: #00189a;
+    color: #FFF;
+    font-weight: 500;
 }
 
 #user {
     display: inline;
     background-color: #00189a;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 8px;
     display: inline-block;
-    margin: 2%;
     color: #FFF;
     float: left;
 }
 
-@media screen and (max-height: 550px) {
-    #left {
-        width: 50%;
-        border-style: solid;
-        border-bottom: 0px;
-        height: inherit;
-        padding: 0%;
-        min-width: 300px;
-        height: 99%;
-        display: flex;
-        flex-direction: row;
-    }
-    
-    #friendlist{
-        height: 100%;
-        border-bottom: 0px;
-    }
 
-    #right {
-        width: 50%;
-        min-width: 0px;
-        height: 98%
-    }
-
-    #conversation {
-        
-    }
-}
 #password {
     border: none;
 }
 
 #email {
     border: none;
+}
+
+#typeStatus {
+    font-family: 'Roboto Slab', serif;
+    color: grey;
+    border: 2px solid grey;
 }

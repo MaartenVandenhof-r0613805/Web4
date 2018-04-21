@@ -5,14 +5,18 @@ var friendbtn = document.getElementById("addFriendbtn")
 var statusdiv = document.getElementById("connected");
 var xmlRequest = new XMLHttpRequest();
 var currentUser = false;
+var sessionId = "";
 window.onload = poll;
+
 
 /////////////////Buttons////////////////////
 
 document.addEventListener("DOMContentLoaded", function(){
-    document.getElementById('connected').style.color = "#03FF06";
     getSessionId();
+    statusText = connected;
+    updateStatus();
     renderHTML();
+    changeFriendsColor(statusdiv);
     openSocket();
 });
 
@@ -97,6 +101,8 @@ function updateStatus() {
 
     console.log("Functie is uitgevoerd");
 }
+
+
 
 ///////////////Friendlist///////////////
 
@@ -214,4 +220,18 @@ function getActualSession(){
     console.log(sessionId);
 }
 
-window.close = closeSocket;
+/////////////////////ClosePage///////////////////
+
+function closePage() {
+    statusText = "Offline";
+    updateStatus();
+    closeSocket();
+}
+
+
+window.onbeforeunload = function(){
+    statusText = "Offline";
+    updateStatus();
+    closeSocket();
+    return 'Are you sure you want to leave?';
+};

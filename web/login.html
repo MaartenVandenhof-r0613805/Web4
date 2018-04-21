@@ -10,6 +10,7 @@
 <head>
     <meta name="application-name" content="width=device-width, initial-scale=1">
     <title>JSON and AJAX</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
 </head>
 
