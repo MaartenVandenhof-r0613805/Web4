@@ -1,91 +1,82 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta name="application-name" content="width=device-width, initial-scale=1">
-    <title>JSON and AJAX</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+    <title>Blog</title>
 </head>
-
-<body>
-    <main>
-        <div id="left">
-            <div id="friendlist">
-                <h2>Friendlist</h2>
-                <div id="friendsTable">
-                <table id="friends">
-                   
-                    <tr>
-                        <td>Jandeman</td>
-                        <td>Online</td>
-                    </tr>
-                    <tr>
-                        <td>Jandeman</td>
-                        <td>Online</td>
-                    </tr>
-                    <tr>
-                        <td>Jandeman</td>
-                        <td>Online</td>
-                    </tr>
-                    <tr>
-                        <td>Jandeman</td>
-                        <td>Online</td>
-                    </tr>
-                    <tr>
-                        <td>Jandeman</td>
-                        <td>Online</td>
-                    </tr>
-                    <tr>
-                        <td>Jandeman</td>
-                        <td>Online</td>
-                    </tr>
-                    <tr>
-                        <td>Jandeman</td>
-                        <td>Online</td>
-                    </tr>
-                    <tr>
-                        <td>Jandeman</td>
-                        <td>Online</td>
-                    </tr>
-                    <tr>
-                        <td>Jandeman</td>
-                        <td>Online</td>
-                    </tr>
-                    
-                </table>
-                </div>
-                <div id="addFriend">
-                    <div>
-                        <h3>Add Friend</h3>
-                        <label for="friendName">Email </label><input type="text" id="friendName" name="friendName">
-                        <button id="addFriendbtn">Add Friend</button>
-                        <button id="sync">Sync</button>
-                    </div>
+<body id="blogbody">
+   <header>
+       Welkom to the blog
+   </header>
+    <main id="blogmain">
+        <article class="blogpost">
+            <img src="Images/mountain.jpg" alt="">
+            <div class="description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum cupiditate, dignissimos, laboriosam vero eius id corporis omnis illo animi eligendi voluptate repellendus quas illum vel, enim maxime provident incidunt! Earum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia veniam quaerat qui iusto eos error assumenda officia vel totam, nulla consequuntur quasi repellendus maiores, excepturi perferendis numquam commodi sit?</p>
+            </div>
+            <div class="commentsection">
+                <form action="" method="post">
+                    <label for="name1">Comment as: </label>
+                    <input type="text" id="name1">
+                    <label for="rating1">Rating:</label>
+                    <input type="number" id="rating1">
+                    <input type="submit" value="Comment">
+                </form>
+                <div class="comments">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, perferendis quasi dolorem alias. Explicabo, commodi architecto omnis, suscipit ipsa, placeat sunt distinctio odit maiores rem soluta recusandae eaque corporis doloribus!
+                    </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio quia non facilis cumque qui rem vitae quam, adipisci itaque, obcaecati nobis veniam saepe temporibus. Quo nostrum, necessitatibus atque id praesentium.</p>
                 </div>
             </div>
-            <div id="status">
-                <h2>Status</h2>
-                <img src="Images/profilepic.png" alt="">
-                <div id="connected"></div>
-                <select name="options" id="dropdown">
-                    <option value="Online">Online</option>
-                    <option value="Offline">Offline</option>
-                    <option value="Away">Away</option>
-                </select>
-                <input type="text" value="Type Status" id="typeStatus" name="typeStatus">
-                <button id="statusbtn">Change status</button>
-            </div>
-        </div>
-        <div id="right">
-            <div id="conversation">
+        </article>
         
+        <article class="blogpost">
+            <img src="Images/mountain.jpg" alt="">
+            <div class="description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum cupiditate, dignissimos, laboriosam vero eius id corporis omnis illo animi eligendi voluptate repellendus quas illum vel, enim maxime provident incidunt! Earum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia veniam quaerat qui iusto eos error assumenda officia vel totam, nulla consequuntur quasi repellendus maiores, excepturi perferendis numquam commodi sit?</p>
             </div>
-            <input type="text" id="message" name="message" value="message">
-            <button id="sendMessage">Send</button>
-        </div>
+            <div class="commentsection">
+                <form action="" method="post">
+                    <label for="name2">Comment as: </label>
+                    <input type="text" id="name2">
+                    <label for="rating2">Rating:</label>
+                    <input type="number" id="rating2">
+                    <input type="submit" value="Comment">
+                </form>
+                <div class="comments">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, perferendis quasi dolorem alias. Explicabo, commodi architecto omnis, suscipit ipsa, placeat sunt distinctio odit maiores rem soluta recusandae eaque corporis doloribus!
+                    </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio quia non facilis cumque qui rem vitae quam, adipisci itaque, obcaecati nobis veniam saepe temporibus. Quo nostrum, necessitatibus atque id praesentium.</p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="blogpost">
+            <img src="Images/mountain.jpg" alt="">
+            <div class="description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum cupiditate, dignissimos, laboriosam vero eius id corporis omnis illo animi eligendi voluptate repellendus quas illum vel, enim maxime provident incidunt! Earum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia veniam quaerat qui iusto eos error assumenda officia vel totam, nulla consequuntur quasi repellendus maiores, excepturi perferendis numquam commodi sit?</p>
+            </div>
+            <div class="commentsection">
+                <form action="" method="post">
+                    <label for="name3">Comment as: </label>
+                    <input type="text" id="name3">
+                    <label for="rating3">Rating:</label>
+                    <input type="number" id="rating3">
+                    <input type="submit" value="Comment">
+                </form>
+                <div class="comments">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, perferendis quasi dolorem alias. Explicabo, commodi architecto omnis, suscipit ipsa, placeat sunt distinctio odit maiores rem soluta recusandae eaque corporis doloribus!
+                    </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio quia non facilis cumque qui rem vitae quam, adipisci itaque, obcaecati nobis veniam saepe temporibus. Quo nostrum, necessitatibus atque id praesentium.</p>
+                </div>
+            </div>
+        </article>
     </main>
-    <script src="/js/main.js"></script>
 </body>
-
 </html>
