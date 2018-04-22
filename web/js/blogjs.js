@@ -19,7 +19,7 @@ function addComment(){
     for(var i = 0; i<commentbtns.length; i++){
         commentbtns[i].addEventListener('click', function () {
             number = this.id.substr(this.id.length-1);
-            send(commenttext[number-1].value);
+            send(commenttext[number-1].value + "@@@@" + names[number-1].value + "####" + ratings[number-1].value);
         })
     }
 }
@@ -32,9 +32,10 @@ var webSocket;
 function openSocket(){
     webSocket = new WebSocket("ws://localhost:8080/comments");
     webSocket.open = function (event) {
-
+        console.log(names)
     };
     webSocket.onmessage = function (event) {
+        console.log(event.data);
         writeResponse(event.data, number);
     };
     webSocket.onclose = function (event) {
@@ -55,15 +56,24 @@ function writeResponse(text, i) {
     var post = document.createElement('div');
     var title = document.createElement('h3');
     var rating = document.createElement('h3');
+    var seperator1 = "@@@@";
+    var seperator2 = "####";
+    var t = text;
     commentwrap.setAttribute("class", "commentwrap");
     post.setAttribute("class", "commentpost");
     rating.setAttribute("class", "commentRating");
-    title.innerHTML = names[number-1].value;
-    rating.innerHTML = ratings[number-1].value;
-    post.innerHTML = text;
+
+    post.innerHTML = text.split(seperator1).shift();
+    t = text.split(seperator1).pop();
+
+    title.innerHTML = t.split(seperator2).shift();
+    rating.innerHTML = t.split(seperator2).pop();
+
+
     commentwrap.appendChild(title);
     commentwrap.appendChild(rating);
     commentwrap.appendChild(post);
+
     comments[i-1].appendChild(commentwrap);
 }
 

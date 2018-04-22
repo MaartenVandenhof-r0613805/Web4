@@ -7,8 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="addfe718-b6a0-44bb-9ae0-9fc675d255c6" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/JSON_and_AJAX_project_war_exploded/js/blogjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/JSON_and_AJAX_project_war_exploded/js/blogjs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/js/blogjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/blogjs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/main.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,8 +38,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="3" selection-start-line="13" selection-end-line="20" selection-end-column="3" />
+            <state relative-caret-position="-1656">
+              <caret line="76" column="1" lean-forward="true" selection-start-line="76" selection-start-column="1" selection-end-line="76" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -46,8 +47,8 @@
       <file leaf-file-name="blogjs.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/js/blogjs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="64" column="34" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
+            <state relative-caret-position="288">
+              <caret line="65" column="52" lean-forward="true" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -495,12 +496,12 @@
       <workItem from="1524317828784" duration="7470000" />
       <workItem from="1524343838155" duration="2555000" />
       <workItem from="1524347715147" duration="173000" />
-      <workItem from="1524389057006" duration="7825000" />
+      <workItem from="1524389057006" duration="9975000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105899000" />
+    <option name="totallyTimeSpent" value="108049000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1920" height="1050" extended-state="6" />
@@ -890,13 +891,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="3" selection-start-line="13" selection-end-line="20" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/CommentServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
@@ -914,10 +908,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1656">
+          <caret line="76" column="1" lean-forward="true" selection-start-line="76" selection-start-column="1" selection-end-line="76" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/blogjs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="64" column="34" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
+        <state relative-caret-position="288">
+          <caret line="65" column="52" lean-forward="true" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
         </state>
       </provider>
     </entry>
