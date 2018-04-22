@@ -19,7 +19,7 @@
 }
 
 body {
-    margin: 0;
+    margin: 0px;
     width: 100%;
     height: 99.7%;
     font-family: 'Roboto Slab', serif;
@@ -27,7 +27,6 @@ body {
 }
 
 html {
-    height: 100%;
     margin: 0%;
     padding: 0%;
 }
@@ -389,4 +388,149 @@ div div p{
     font-family: 'Roboto Slab', serif;
     color: grey;
     border: 2px solid grey;
+}
+
+/*BlogPost*/
+
+.blogpost {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #FFF;
+}
+
+.blogpost img {
+    width: 100%;
+    max-height: 100%;
+}
+
+#blogmain {
+    flex-direction: column;
+    height: auto;
+    padding-top: 5%;
+}
+
+
+
+
+
+#blogbody {
+    height: 100%;
+    margin: 0%;
+    padding: 0%;
+    background-color: #f2f2f2;
+}
+
+#blogbody header {
+    text-align: center;
+    padding: 2%;
+    background-color: #00189a;
+    color: #FFF;
+    position:fixed;
+    top:0px;
+    left:0px;
+    z-index:1000;
+    width: 100%;
+}
+
+.description {
+    margin: 0px 2%;
+    border-bottom: 1px solid #aaaaaa;
+    margin-bottom: 2%;
+}
+
+.commentsection {
+    margin: 0px 2%;
+}
+
+.commentform {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+}
+
+.name {
+    margin-left: 1%;
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    flex-grow: 1;
+    color: grey;
+    font-family: 'Roboto Slab';
+    font-size: 15px;
+}
+
+.commenttext {
+    width: 100%;
+    margin: 1% 0%;
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    min-height: 20px;
+    color: grey;
+    font-family: 'Roboto Slab';
+    margin: 20px 0px;
+    font-size: 15px;
+}
+
+.rating {
+    width: 5%;
+    margin-left: 1%;
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    height: 20px;
+    color: grey;
+    font-family: 'Roboto Slab';
+    font-size: 15px;
+}
+
+.comment {
+    padding: 5px;
+    font-family: 'Roboto Slab', serif;
+    margin-left: auto;
+    color: #00189a;
+    background-color: #FFF;
+    border: 2px solid #00189a;
+    transition: 0.2s
+}
+
+.comment:hover {
+    color: #FFF;
+    background-color: #00189a;
+    font-weight: 700;
+}
+
+.namelabel {
+    width: 100px;
+}
+
+.comments {
+    background-color: #ddd;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-bottom: 2%;
+}
+
+.comments div {
+    background-color: #FFF;
+    padding: 10px;
+    margin: 2%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.comments div div {
+    width: 100%;
+}
+
+.comments div h3{
+    margin-top: 0px;
+    color: #00189a;
+}
+
+.commentRating {
+    margin-left: auto;
+    margin-right: 2%;
 }

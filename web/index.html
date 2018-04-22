@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="main.css">
@@ -7,10 +8,11 @@
 
     <title>Blog</title>
 </head>
+
 <body id="blogbody">
-   <header>
-       Welkom to the blog
-   </header>
+    <header>
+        Welkom to the blog
+    </header>
     <main id="blogmain">
         <article class="blogpost">
             <img src="Images/mountain.jpg" alt="">
@@ -18,65 +20,103 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum cupiditate, dignissimos, laboriosam vero eius id corporis omnis illo animi eligendi voluptate repellendus quas illum vel, enim maxime provident incidunt! Earum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia veniam quaerat qui iusto eos error assumenda officia vel totam, nulla consequuntur quasi repellendus maiores, excepturi perferendis numquam commodi sit?</p>
             </div>
             <div class="commentsection">
-                <form action="" method="post">
-                    <label for="name1">Comment as: </label>
-                    <input type="text" id="name1">
+                <div class="commentform">
+                    <label for="name1" class="namelabel">Comment as: </label>
+                    <input type="text" id="name1" class="name">
+                    <input type="text" class="commenttext" value="Comment" id="commenttext1">
                     <label for="rating1">Rating:</label>
-                    <input type="number" id="rating1">
-                    <input type="submit" value="Comment">
-                </form>
-                <div class="comments">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, perferendis quasi dolorem alias. Explicabo, commodi architecto omnis, suscipit ipsa, placeat sunt distinctio odit maiores rem soluta recusandae eaque corporis doloribus!
-                    </p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio quia non facilis cumque qui rem vitae quam, adipisci itaque, obcaecati nobis veniam saepe temporibus. Quo nostrum, necessitatibus atque id praesentium.</p>
+                    <input type="number" id="rating1" class="rating">
+                    <input type="submit" value="Comment" class="comment" id="commentbtn1">
+                </div>
+                <div class="comments" id="comments1">
+                    <div class="commentwrap">
+                        <h3>Name</h3>
+                        <h3 class="commentRating">5</h3>
+                        <div id="commentpost1" class="commentpost">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, perferendis quasi dolorem alias. Explicabo, commodi architecto omnis, suscipit ipsa, placeat sunt distinctio odit maiores rem soluta recusandae eaque corporis doloribus!
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3>Name</h3>
+                        <h3 class="commentRating">5</h3>
+                        <div>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, perferendis quasi dolorem alias. Explicabo, commodi architecto omnis, suscipit ipsa, placeat sunt distinctio odit maiores rem soluta recusandae eaque corporis doloribus!
+                        </div>
+                    </div>
                 </div>
             </div>
         </article>
-        
+
         <article class="blogpost">
             <img src="Images/mountain.jpg" alt="">
             <div class="description">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum cupiditate, dignissimos, laboriosam vero eius id corporis omnis illo animi eligendi voluptate repellendus quas illum vel, enim maxime provident incidunt! Earum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia veniam quaerat qui iusto eos error assumenda officia vel totam, nulla consequuntur quasi repellendus maiores, excepturi perferendis numquam commodi sit?</p>
             </div>
             <div class="commentsection">
-                <form action="" method="post">
-                    <label for="name2">Comment as: </label>
-                    <input type="text" id="name2">
+                <div class="commentform">
+                    <label for="name2" class="namelabel">Comment as: </label>
+                    <input type="text" id="name2" class="name">
+                    <input type="text" class="commenttext" value="Comment">
                     <label for="rating2">Rating:</label>
-                    <input type="number" id="rating2">
-                    <input type="submit" value="Comment">
-                </form>
+                    <input type="number" id="rating2" class="rating">
+                    <input type="submit" value="Comment" class="comment" id="commentbtn2">
+                </div>
                 <div class="comments">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, perferendis quasi dolorem alias. Explicabo, commodi architecto omnis, suscipit ipsa, placeat sunt distinctio odit maiores rem soluta recusandae eaque corporis doloribus!
-                    </p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio quia non facilis cumque qui rem vitae quam, adipisci itaque, obcaecati nobis veniam saepe temporibus. Quo nostrum, necessitatibus atque id praesentium.</p>
+                    <div>
+                        <h3>Name</h3>
+                        <h3 class="commentRating">5</h3>
+                        <div>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, perferendis quasi dolorem alias. Explicabo, commodi architecto omnis, suscipit ipsa, placeat sunt distinctio odit maiores rem soluta recusandae eaque corporis doloribus!
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3>Name</h3>
+                        <h3 class="commentRating">5</h3>
+                        <div>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, perferendis quasi dolorem alias. Explicabo, commodi architecto omnis, suscipit ipsa, placeat sunt distinctio odit maiores rem soluta recusandae eaque corporis doloribus!
+                        </div>
+                    </div>
                 </div>
             </div>
         </article>
-        
+
         <article class="blogpost">
             <img src="Images/mountain.jpg" alt="">
             <div class="description">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum cupiditate, dignissimos, laboriosam vero eius id corporis omnis illo animi eligendi voluptate repellendus quas illum vel, enim maxime provident incidunt! Earum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia veniam quaerat qui iusto eos error assumenda officia vel totam, nulla consequuntur quasi repellendus maiores, excepturi perferendis numquam commodi sit?</p>
             </div>
             <div class="commentsection">
-                <form action="" method="post">
-                    <label for="name3">Comment as: </label>
-                    <input type="text" id="name3">
+                <div class="commentform">
+                    <label for="name3" class="namelabel">Comment as: </label>
+                    <input type="text" id="name3" class="name">
+                    <input type="text" class="commenttext" value="Comment">
                     <label for="rating3">Rating:</label>
-                    <input type="number" id="rating3">
-                    <input type="submit" value="Comment">
-                </form>
+                    <input type="number" id="rating3" class="rating">
+                    <input type="submit" value="Comment" class="comment" id="commentbtn3">
+                </div>
                 <div class="comments">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, perferendis quasi dolorem alias. Explicabo, commodi architecto omnis, suscipit ipsa, placeat sunt distinctio odit maiores rem soluta recusandae eaque corporis doloribus!
-                    </p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio quia non facilis cumque qui rem vitae quam, adipisci itaque, obcaecati nobis veniam saepe temporibus. Quo nostrum, necessitatibus atque id praesentium.</p>
+                    <div>
+                        <h3>Name</h3>
+                        <h3 class="commentRating">5</h3>
+                        <div>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, perferendis quasi dolorem alias. Explicabo, commodi architecto omnis, suscipit ipsa, placeat sunt distinctio odit maiores rem soluta recusandae eaque corporis doloribus!
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3>Name</h3>
+                        <h3 class="commentRating">5</h3>
+                        <div>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, perferendis quasi dolorem alias. Explicabo, commodi architecto omnis, suscipit ipsa, placeat sunt distinctio odit maiores rem soluta recusandae eaque corporis doloribus!
+                        </div>
+                    </div>
                 </div>
             </div>
         </article>
     </main>
+    <script src="js/blogjs.js"></script>
 </body>
+
 </html>

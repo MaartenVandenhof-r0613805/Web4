@@ -57,7 +57,7 @@ document.getElementById("sync").addEventListener("click", function () {
 document.getElementById("sendMessage").addEventListener("click", function () {
     currentUser = true;
     send()
-})
+});
 
 
 /////////////////Status///////////////
