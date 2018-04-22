@@ -1,6 +1,8 @@
 var commenttext =document.getElementsByClassName("commenttext");
 var commentbtns = document.getElementsByClassName("comment");
 var comments = document.getElementsByClassName("comments");
+var names = document.getElementsByClassName("name");
+var ratings = document.getElementsByClassName("rating");
 var number = 0;
 document.addEventListener("DOMContentLoaded", function(){
     openSocket();
@@ -51,10 +53,16 @@ function closeSocket() {
 function writeResponse(text, i) {
     var commentwrap = document.createElement('div');
     var post = document.createElement('div');
+    var title = document.createElement('h3');
+    var rating = document.createElement('h3');
     commentwrap.setAttribute("class", "commentwrap");
     post.setAttribute("class", "commentpost");
-    post.innerHTML = "";
+    rating.setAttribute("class", "commentRating");
+    title.innerHTML = names[number-1].value;
+    rating.innerHTML = ratings[number-1].value;
     post.innerHTML = text;
+    commentwrap.appendChild(title);
+    commentwrap.appendChild(rating);
     commentwrap.appendChild(post);
     comments[i-1].appendChild(commentwrap);
 }
