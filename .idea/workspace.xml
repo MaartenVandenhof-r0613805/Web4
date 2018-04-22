@@ -9,7 +9,9 @@
     <list default="true" id="addfe718-b6a0-44bb-9ae0-9fc675d255c6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/JSON_and_AJAX_project_war_exploded/js/blogjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/JSON_and_AJAX_project_war_exploded/js/blogjs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/JSON_and_AJAX_project_war_exploded/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/JSON_and_AJAX_project_war_exploded/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/js/blogjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/blogjs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/main.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,8 +49,8 @@
       <file leaf-file-name="blogjs.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/js/blogjs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="65" column="52" lean-forward="true" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
+            <state relative-caret-position="378">
+              <caret line="69" column="37" lean-forward="true" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -496,12 +498,12 @@
       <workItem from="1524317828784" duration="7470000" />
       <workItem from="1524343838155" duration="2555000" />
       <workItem from="1524347715147" duration="173000" />
-      <workItem from="1524389057006" duration="9975000" />
+      <workItem from="1524389057006" duration="12197000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108049000" />
+    <option name="totallyTimeSpent" value="110271000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1920" height="1050" extended-state="6" />
@@ -917,8 +919,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/blogjs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="65" column="52" lean-forward="true" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
+        <state relative-caret-position="378">
+          <caret line="69" column="37" lean-forward="true" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
         </state>
       </provider>
     </entry>

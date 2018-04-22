@@ -402,6 +402,8 @@ div div p{
     margin-bottom: 40px;
     background-color: #FFF;
     max-width: 800px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .blogpost img {
@@ -423,7 +425,7 @@ div div p{
     height: 100%;
     margin: 0%;
     padding: 0%;
-    background-color: #f2f2f2;
+    background: linear-gradient(lightblue, #b57ab3);
 }
 
 #blogbody header {
@@ -513,6 +515,8 @@ div div p{
     padding-top: 1%;
     padding-bottom: 1%;
     margin-bottom: 2%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .comments div {
