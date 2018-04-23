@@ -17,12 +17,11 @@ public class GetSessionId extends RequestHandler {
         HttpSession session = request.getSession(false);
         Person user = (Person) session.getAttribute("user");
 
-        String userID = user.getUserId();
 
         try{
-            String json = toJSON(userID);
+            String json = toJSON(user);
 
-            response.setContentType("application/json");
+            response.setContentType("application/json/getSessionId");
             response.getWriter().write(json);
         } catch (JsonProcessingException e){
             e.printStackTrace();

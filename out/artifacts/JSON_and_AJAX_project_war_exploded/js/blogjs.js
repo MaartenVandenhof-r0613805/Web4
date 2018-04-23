@@ -4,13 +4,34 @@ var comments = document.getElementsByClassName("comments");
 var names = document.getElementsByClassName("name");
 var ratings = document.getElementsByClassName("rating");
 var number = 0;
-document.addEventListener("DOMContentLoaded", function(){
+var xmlRequest = new XMLHttpRequest();
 
+/////////////Buttons/////////////////
+
+document.addEventListener("DOMContentLoaded", function(){
     console.log("Juiste js loaded");
     addComment();
+    userDisplay();
 });
 
+/////////////LoginUserDisplay/////////////////
 
+function userDisplay() {
+    var navbar = document.getElementsByClassName("navbar")[0];
+    var li1 = document.createElement('li');
+    var li2 = document.createElement('li');
+
+    xmlRequest.open("GET", "Controller?action=GetSessionId", true);
+    xmlRequest.onreadystatechange = function (ev) {
+        var serverResponse = JSON.parse(xmlRequest.responseText);
+        console.log(serverResponse);
+        li1.innerHTML = "Welcome " + serverResponse.firstName;
+        li2.innerHTML = "<a href=\"chatscreen.html\">Chatwindow</a>";
+        navbar.appendChild(li1);
+        navbar.appendChild(li2);
+    };
+    xmlRequest.send(null);
+}
 
 /////////////AddComment/////////////////
 
