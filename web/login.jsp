@@ -35,8 +35,9 @@
         <input type="text" id="password" name="password">
         <input type="submit" id="loginbtn" value="Login">
         </form>
+        <button id="guestbtn">Login as Guest</button>
     </div>
-    <script src="/js/main.js"></script>
+    <script src="/js/login.js"></script>
 </body>
 
 </html>

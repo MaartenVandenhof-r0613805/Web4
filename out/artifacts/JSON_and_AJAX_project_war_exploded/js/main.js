@@ -222,16 +222,10 @@ function getActualSession(){
 
 /////////////////////ClosePage///////////////////
 
-function closePage() {
-    statusText = "Offline";
-    updateStatus();
-    closeSocket();
-}
-
-
 window.onbeforeunload = function(){
     statusText = "Offline";
     updateStatus();
     closeSocket();
     return 'Are you sure you want to leave?';
 };
+

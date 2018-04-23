@@ -18,6 +18,8 @@ public class PersonRepositoryStub implements PersonRepository {
 		add(jan);
 		Person an = new Person("an@ucll.be", "t", "An", "Cornelissen", Role.LID);
 		add(an);
+		Person guest = new Person("guest@ucll.be", "t", "Guest", " ", Role.LID);
+		add(guest);
 	}
 	
 	public Person get(String personId){

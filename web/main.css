@@ -260,7 +260,7 @@ main {
 #login form{
     float: left;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     margin-top: 30px;
 }
 
@@ -457,6 +457,12 @@ div div p{
     text-decoration: none;
     border: 2px solid #FFF;
     padding: 5px;
+    transition: 0.2s;
+}
+#blogbody nav ul li a:hover{
+    color: #00189a;
+    border: 2px solid #FFF;
+    background-color: #FFF;
 }
 
 .description {
@@ -562,4 +568,26 @@ div div p{
 
 .commentpost {
     font-size: 15px;
+}
+
+#login #guestbtn {
+    float: none;
+    width: 30%;
+    display: block;
+    margin: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1%;
+    font-family: 'Roboto Slab', serif;    
+    background-color: #FFF;
+    color: #00189a;
+    border: 2px solid #00189a;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+#login #guestbtn:hover{
+    background-color: #00189a;
+    color: #FFF;
+    font-weight: 500;
 }
