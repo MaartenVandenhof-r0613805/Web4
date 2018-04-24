@@ -35,7 +35,11 @@
         <input type="text" id="password" name="password">
         <input type="submit" id="loginbtn" value="Login">
         </form>
-        <button id="guestbtn">Login as Guest</button>
+        <form action="Controller?action=LogIn" method="post" id="guestform">
+            <input type="submit" id="guestbtn" value="Login as Guest">
+            <input type="text" name="email" class="guestinput" value="guest@ucll.be">
+            <input type="text" name="password" class="guestinput" value="t">
+        </form>
     </div>
     <script src="/js/login.js"></script>
 </body>

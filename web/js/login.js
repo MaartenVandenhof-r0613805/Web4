@@ -4,18 +4,16 @@ var xmlRequest = new XMLHttpRequest();
 
 document.getElementById("guestbtn").addEventListener('click', function () {
     console.log("CLICKED");
-    loginAsGuest();
 });
 
 
 /////////////////////LoginAsGuest///////////////////
 
 function loginAsGuest(){
-    var email = "email=guest@ucll.be";
-    var password = "password=t";
+    var guest = "email=guest@ucll.be&password=t";
 
     xmlRequest.open("POST", "Controller?action=LogIn", true);
-
+    console.log("LOGIN DONE");
     xmlRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xmlRequest.send(email, password);
+    xmlRequest.send(guest);
 }
