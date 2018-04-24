@@ -1,7 +1,7 @@
 var connected = "Online";
 var statusText = connected;
 var changeButton = document.getElementById("statusbtn");
-var friendbtn = document.getElementById("addFriendbtn")
+var friendbtn = document.getElementById("addFriendbtn");
 var statusdiv = document.getElementById("connected");
 var xmlRequest = new XMLHttpRequest();
 var currentUser = false;
@@ -12,7 +12,7 @@ window.onload = poll;
 /////////////////Buttons////////////////////
 
 document.addEventListener("DOMContentLoaded", function(){
-    getSessionId();
+    userDisplay();
     statusText = connected;
     updateStatus();
     renderHTML();
@@ -24,7 +24,7 @@ changeButton.addEventListener("click", function () {
     var statusJava = "";
     if (document.getElementById('typeStatus').value == 'Type Status'){
         statusText = document.getElementById('dropdown').value;
-        statusJava = "status=" + encodeURIComponent(statusText)
+        statusJava = "status=" + encodeURIComponent(statusText);
 
         xmlRequest.open("POST", "Controller?action=UpdateStatus", true);
 
@@ -33,7 +33,7 @@ changeButton.addEventListener("click", function () {
         changeDropdownColor();
     } else {
         statusText = document.getElementById('typeStatus').value;
-        statusJava = "status=" + encodeURIComponent(statusText)
+        statusJava = "status=" + encodeURIComponent(statusText);
 
         xmlRequest.open("POST", "Controller?action=UpdateStatus", true);
 
@@ -219,6 +219,28 @@ function getActualSession(){
     sessionId = serverResponse[0];
     console.log(sessionId);
 }
+
+/////////////LoginUserDisplay/////////////////
+
+function userDisplay() {
+    console.log("before navbar");
+    var navbar = document.getElementsByClassName("navbar")[0];
+    console.log("after navbar");
+    var li1 = document.createElement('li');
+    var li2 = document.createElement('li');
+    console.log("UseDisplay");
+    xmlRequest.open("GET", "Controller?action=GetSessionId", true);
+    xmlRequest.onreadystatechange = function (ev) {
+        var serverResponse = JSON.parse(xmlRequest.responseText);
+        console.log(serverResponse);
+        li1.innerHTML = "Welcome " + serverResponse.firstName;
+        li2.innerHTML = "<a href=\"index.html\">Blog</a>";
+        navbar.appendChild(li1);
+        navbar.appendChild(li2);
+    };
+    xmlRequest.send(null);
+}
+
 
 /////////////////////ClosePage///////////////////
 
