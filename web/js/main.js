@@ -5,7 +5,7 @@ var friendbtn = document.getElementById("addFriendbtn");
 var statusdiv = document.getElementById("connected");
 var xmlRequest = new XMLHttpRequest();
 var currentUser = false;
-var sessionId = "";
+var currentFriendId = "";
 
 ///////////////////JQuery//////////////////////
 
@@ -13,6 +13,10 @@ $(document).ready(function () {
     ///////////////OnStart/////////////////
 
     poll();
+    $('#sendMessage').on('click', function () {
+        console.log("Cliced SendMessage");
+       sendMessage();
+    });
 
     ///////////////Friendlist///////////////
 
@@ -58,6 +62,7 @@ $(document).ready(function () {
     function poll() {
         setTimeout(function () {
             getFriendList();
+            getMessages();
             console.log("polling");
             poll();
         }, 1000);
@@ -70,15 +75,51 @@ $(document).ready(function () {
         $.each(document.getElementsByClassName("chatbtn"), function () {
 
             $(this).on('click', function(){
+                currentFriendId = this.id;
                 console.log("Clicked");
                 $.ajax({
                     type:'GET',
-                    url: 'Controller?action=GetMessages&friendId='+ this.id,
+                    url: 'Controller?action=GetMessages&friendId='+ currentFriendId,
+                    dataType: 'json',
+                    success: function (data) {
+                        $conversation.html("");
+                        if(data != null){
+                            for (var i = 0; i<data.length;i++){
+                                var p = document.createElement('p')
+                                var div = document.createElement('div');
+                                console.log(data[i]);
+                                p.innerHTML = data[i];
+                                div.appendChild(p);
+                                $conversation.append(div);
+                            }
+                        }
+                    }
+                })
+            });
+        })
+
+
+    }
+
+    function sendMessage() {
+        var message = $('#message').val();
+        $.ajax({
+            type: 'POST',
+            url: 'Controller?action=addMessage',
+            data: {
+                'message' : message,
+                'currentFriendId' : currentFriendId
+            },
+            success: function () {
+                var $conversation = $('#conversation');
+                $.ajax({
+                    type:'GET',
+                    url: 'Controller?action=GetMessages&friendId='+ currentFriendId,
                     dataType: 'json',
                     success: function (data) {
                         $conversation.html("");
                         for (var i = 0; i<data.length;i++){
-                            var p = document.createElement('p')
+                            var p = document.createElement('p');
                             var div = document.createElement('div');
                             console.log(data[i]);
                             p.innerHTML = data[i];
@@ -87,10 +128,31 @@ $(document).ready(function () {
                         }
                     }
                 })
-            });
+            }
         })
 
+    }
 
+    function getMessages() {
+        var $conversation = $('#conversation');
+        $.ajax({
+            type:'GET',
+            url: 'Controller?action=GetMessages&friendId='+ currentFriendId,
+            dataType: 'json',
+            success: function (data) {
+                $conversation.html("");
+                if(data != null){
+                    for (var i = 0; i<data.length;i++){
+                        var p = document.createElement('p')
+                        var div = document.createElement('div');
+                        console.log(data[i]);
+                        p.innerHTML = data[i];
+                        div.appendChild(p);
+                        $conversation.append(div);
+                    }
+                }
+            }
+        })
     }
 });
 
@@ -134,14 +196,9 @@ friendbtn.addEventListener("click", function () {
     addJavaFriend();
 });
 
-document.getElementById("sync").addEventListener("click", function () {
-    getFriendList();
-});
 
-document.getElementById("sendMessage").addEventListener("click", function () {
-    currentUser = true;
-    send()
-});
+
+
 
 
 /////////////////Status///////////////

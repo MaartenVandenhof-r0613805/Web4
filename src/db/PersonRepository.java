@@ -18,4 +18,6 @@ public interface PersonRepository {
 
 	public abstract void update(Person person);
 
+	public abstract void addMessage(String currentUserId, String friendId, String message);
+
 }

@@ -22,10 +22,11 @@ public class PersonRepositoryStub implements PersonRepository {
 		add(guest);
 
 		guest.addFriend(jan);
+		jan.addFriend(guest);
 		try{
-			guest.addMessage("jan@ucll.be", "This is a test message");
-			guest.addMessage("jan@ucll.be", "Another message");
-			guest.addMessage("jan@ucll.be", "Again a message");
+			addMessage("guest@ucll.be","jan@ucll.be", "This is a test message");
+			addMessage("guest@ucll.be","jan@ucll.be", "Another message");
+			addMessage("guest@ucll.be","jan@ucll.be", "Again a message");
 		} catch (Exception e){
 			e.printStackTrace();
 		}
@@ -75,5 +76,10 @@ public class PersonRepositoryStub implements PersonRepository {
 		else {
 			return null;
 		}
+	}
+
+	public void addMessage(String currentUserId, String friendId, String message){
+		get(currentUserId).addMessage(friendId, message);
+		get(friendId).addMessage(currentUserId, message);
 	}
 }

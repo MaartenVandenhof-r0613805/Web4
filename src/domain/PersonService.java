@@ -38,4 +38,8 @@ public class PersonService {
 	private PersonRepository getPersonRepository() {
 		return personRepository;
 	}
+
+	public void addMessage(String currentUserId, String friendId, String message){
+		getPersonRepository().addMessage(currentUserId, friendId, message);
+	}
 }
