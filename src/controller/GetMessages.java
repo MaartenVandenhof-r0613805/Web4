@@ -11,18 +11,22 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class GetFriendList extends RequestHandler {
+public class GetMessages extends RequestHandler {
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession(false);
         Person user = (Person) session.getAttribute("user");
-
-        ArrayList<Person> list = user.getFriendlist();
+        ArrayList<String> messages = new ArrayList<>();
+        try{
+            String friendId = (String)request.getParameter("friendId");
+            messages = user.getMessages(friendId);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
 
         try{
-            String json = toJSON(list);
-
-            response.setContentType("application/json");
+            String json = toJSON(messages);
+            response.setContentType("application/json/messages");
             response.getWriter().write(json);
         } catch (JsonProcessingException e){
             e.printStackTrace();

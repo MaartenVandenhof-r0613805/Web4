@@ -6,8 +6,93 @@ var statusdiv = document.getElementById("connected");
 var xmlRequest = new XMLHttpRequest();
 var currentUser = false;
 var sessionId = "";
-window.onload = poll;
 
+///////////////////JQuery//////////////////////
+
+$(document).ready(function () {
+    ///////////////OnStart/////////////////
+
+    poll();
+
+    ///////////////Friendlist///////////////
+
+    function getFriendList(){
+        xmlRequest.open("GET", "Controller?action=GetFriendList", true);
+        xmlRequest.onreadystatechange = addFriendDiv;
+        xmlRequest.send(null);
+    }
+
+    function addFriendDiv(){
+
+        var serverResponse = JSON.parse(xmlRequest.responseText);
+        var friends = document.getElementById("friends");
+
+        friends.innerHTML = "";
+        for (var i = 0; i < serverResponse.length; i++) {
+            var tr = document.createElement('tr');
+            var tdname = document.createElement('td');
+            var tdstatus = document.createElement('td');
+            var tdbtn = document.createElement('td');
+            var chatbtn = document.createElement('button');
+            chatbtn.setAttribute("id", serverResponse[i].userId);
+            chatbtn.setAttribute("class", "chatbtn");
+            tdstatus.setAttribute("id", "friendStatus" + i);
+
+            tdname.innerHTML = serverResponse[i].firstName;
+            tdstatus.innerHTML = serverResponse[i].status;
+            chatbtn.innerHTML = "Chat";
+
+            tr.appendChild(tdname);
+            tr.appendChild(tdstatus);
+            tdbtn.appendChild(chatbtn);
+            tr.appendChild(tdbtn);
+            friends.appendChild(tr);
+            changeFriendsColor(tdstatus);
+
+        }
+        getMessageButtons();
+    }
+    /////////////////Poll///////////////
+
+
+    function poll() {
+        setTimeout(function () {
+            getFriendList();
+            console.log("polling");
+            poll();
+        }, 1000);
+    }
+
+    /////////////////Chat///////////////
+
+    function getMessageButtons() {
+        var $conversation = $('#conversation');
+        $.each(document.getElementsByClassName("chatbtn"), function () {
+
+            $(this).on('click', function(){
+                console.log("Clicked");
+                $.ajax({
+                    type:'GET',
+                    url: 'Controller?action=GetMessages&friendId='+ this.id,
+                    dataType: 'json',
+                    success: function (data) {
+                        $conversation.html("");
+                        for (var i = 0; i<data.length;i++){
+                            var p = document.createElement('p')
+                            var div = document.createElement('div');
+                            console.log(data[i]);
+                            p.innerHTML = data[i];
+                            div.appendChild(p);
+                            $conversation.append(div);
+                        }
+                    }
+                })
+            });
+        })
+
+
+    }
+});
 
 /////////////////Buttons////////////////////
 
@@ -17,7 +102,6 @@ document.addEventListener("DOMContentLoaded", function(){
     updateStatus();
     renderHTML();
     changeFriendsColor(statusdiv);
-    openSocket();
 });
 
 changeButton.addEventListener("click", function () {
@@ -104,39 +188,7 @@ function updateStatus() {
 
 
 
-///////////////Friendlist///////////////
 
-function getFriendList(){
-    xmlRequest.open("GET", "Controller?action=GetFriendList", true);
-    xmlRequest.onreadystatechange = addFriendDiv;
-    xmlRequest.send(null);
-}
-
-function addFriendDiv(){
-
-            var serverResponse = JSON.parse(xmlRequest.responseText);
-            var friends = document.getElementById("friends");
-
-            friends.innerHTML = "";
-            for (var i = 0; i < serverResponse.length; i++) {
-                var tr = document.createElement('tr');
-                var tdname = document.createElement('td');
-                var tdstatus = document.createElement('td');
-                tdstatus.setAttribute("id", "friendStatus" + i);
-
-                tdname.innerHTML = serverResponse[i].firstName;
-                tdstatus.innerHTML = serverResponse[i].status;
-
-
-                console.log("FOR LOOP WORD UITGEVOERD");
-
-                tr.appendChild(tdname);
-                tr.appendChild(tdstatus);
-                friends.appendChild(tr);
-                changeFriendsColor(tdstatus);
-
-            }
-}
 
 function changeFriendsColor (element) {
     if(element.innerHTML == "Online"){
@@ -148,77 +200,7 @@ function changeFriendsColor (element) {
     }
 }
 
-function poll() {
-    setTimeout(function () {
-        getFriendList();
-        poll();
-    }, 2000);
-}
 
-/////////////////Chat///////////////
-
-var webSocket;
-var messages = document.getElementById("conversation");
-
-function openSocket(){
-    webSocket = new WebSocket("ws://localhost:8080/echo");
-    webSocket.open = function (event) {
-        writeResponse("Connection opened");
-    };
-    webSocket.onmessage = function (event) {
-        if (currentUser == true){
-            writeResponseUser(event.data);
-        } else {
-            writeResponse(event.data);
-        }
-    };
-    webSocket.onclose = function (event) {
-        writeResponse("Connection closed")
-    }
-}
-
-function send() {
-    var text = document.getElementById("message").value;
-    webSocket.send(text);
-}
-
-function closeSocket() {
-    webSocket.close();
-}
-
-function writeResponse(text) {
-    var p = document.createElement('p')
-    var div = document.createElement('div');
-    p.innerHTML = text;
-    div.appendChild(p);
-    messages.appendChild(div);
-    messages.style.fontSize = "20";
-    currentUser = false;
-
-}
-
-function writeResponseUser(text) {
-    var p = document.createElement('p')
-    var div = document.createElement('div');
-    p.innerHTML = text;
-    p.setAttribute("id", "user");
-    div.appendChild(p);
-    messages.appendChild(div);
-    messages.style.fontSize = "20";
-    currentUser = false;
-}
-
-function getSessionId(){
-    xmlRequest.open("GET", "Controller?action=GetSessionId", true);
-    xmlRequest.onreadystatechange =getActualSession;
-    xmlRequest.send(null);
-}
-
-function getActualSession(){
-    var serverResponse = JSON.parse(xmlRequest.responseText);
-    sessionId = serverResponse[0];
-    console.log(sessionId);
-}
 
 /////////////LoginUserDisplay/////////////////
 

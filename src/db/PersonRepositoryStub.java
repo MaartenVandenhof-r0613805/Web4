@@ -20,6 +20,15 @@ public class PersonRepositoryStub implements PersonRepository {
 		add(an);
 		Person guest = new Person("guest@ucll.be", "t", "Guest", " ", Role.LID);
 		add(guest);
+
+		guest.addFriend(jan);
+		try{
+			guest.addMessage("jan@ucll.be", "This is a test message");
+			guest.addMessage("jan@ucll.be", "Another message");
+			guest.addMessage("jan@ucll.be", "Again a message");
+		} catch (Exception e){
+			e.printStackTrace();
+		}
 	}
 	
 	public Person get(String personId){

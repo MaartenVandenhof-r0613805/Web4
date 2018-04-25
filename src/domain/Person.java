@@ -1,7 +1,6 @@
 package domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
@@ -9,6 +8,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -22,7 +22,9 @@ public class Person {
 	private Role role;
 	private String status;
 	@JsonBackReference
-	private ArrayList friendlist = new ArrayList<Person>();
+	private ArrayList<Person> friendlist = new ArrayList<Person>();
+	private String connectionId;
+	private HashMap<String, ArrayList<String>> messages = new HashMap<String, ArrayList<String>>();
 
 	public Person(String userId, String password, String firstName,
 			String lastName,Role role) {
@@ -165,11 +167,52 @@ public class Person {
 		return this.status;
 	}
 
-	public ArrayList getFriendlist() {
+	public ArrayList<Person> getFriendlist() {
 		return friendlist;
 	}
 
 	public void addFriend(Person person){
 		friendlist.add(person);
+	}
+
+	public void setConnectionId(String id){
+		this.connectionId = id;
+	}
+
+	public String getConnectionId() {
+		return this.connectionId;
+	}
+
+	public void addMessage(String id, String message){
+		ArrayList<String> friendMessages = new ArrayList<>();
+		for(int i = 0; i<getFriendlist().size();i++){
+			Person possiblefriend = getFriendlist().get(i);
+
+			if (possiblefriend.getUserId().equals(id)){
+				if(messages.get(id) != null){
+					messages.get(id).add(message);
+					System.out.println("ID IS NOT NULL");
+
+				} else {
+					friendMessages.add(message);
+					messages.put(id, friendMessages);
+					System.out.println("ID IS NULL");
+				}
+			}
+		}
+
+	}
+
+	public ArrayList<String> getMessages(String id){
+		ArrayList<String> friendMessages = new ArrayList<>();
+
+		for(int i = 0; i<getFriendlist().size();i++){
+			Person friend = getFriendlist().get(i);
+			if (friend.getUserId().equals(id)){
+				friendMessages = messages.get(friend.getUserId());
+			}
+		}
+
+		return friendMessages;
 	}
 }
