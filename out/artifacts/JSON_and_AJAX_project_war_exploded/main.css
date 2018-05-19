@@ -40,7 +40,6 @@ html {
     flex-wrap: wrap;
     margin: 0px;
     padding: 0px;
-    padding-top: %
 }
 
 main {
@@ -650,4 +649,19 @@ header form input{
 header form input:hover{
     background-color: #FFF;
     color: #00189a;
+}
+
+#showFriendsbtn {
+    background-color: #FFF;
+    color: #00189a;
+    font-family: 'Roboto Slab', serif;
+    border: 2px solid #00189a;
+    padding: 5px 10px;
+    transition: 0.2s;
+    margin-bottom: 5px;
+}
+
+#showFriendsbtn:hover {
+    background-color: #00189a;
+    color: #FFF;
 }

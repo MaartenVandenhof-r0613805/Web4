@@ -6,6 +6,7 @@ var statusdiv = document.getElementById("connected");
 var xmlRequest = new XMLHttpRequest();
 var currentUser = false;
 var currentFriendId = "";
+var hidden = false;
 
 ///////////////////JQuery//////////////////////
 
@@ -17,6 +18,7 @@ $(document).ready(function () {
         console.log("Cliced SendMessage");
        sendMessage();
     });
+    showHideFriendList();
 
     ///////////////Friendlist///////////////
 
@@ -56,6 +58,24 @@ $(document).ready(function () {
         }
         getMessageButtons();
     }
+    
+    /////////////////Show/Hide Friendlist///////////////
+
+        function showHideFriendList() {
+            $('#showFriendsbtn').click(function(){
+                if(hidden){
+                    $("#friendsTable").show();
+                    hidden = false;
+                }
+                else{
+                    $("#friendsTable").hide();
+                    hidden = true;
+
+                }
+            })
+        }
+
+    
     /////////////////Poll///////////////
 
 
