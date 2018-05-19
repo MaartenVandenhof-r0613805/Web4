@@ -245,8 +245,6 @@ function updateStatus() {
 
 
 
-
-
 function changeFriendsColor (element) {
     if(element.innerHTML == "Online"){
         element.style.color = "#03FF06";
