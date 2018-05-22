@@ -64,12 +64,10 @@ $(document).ready(function () {
         function showHideFriendList() {
             $('#showFriendsbtn').click(function(){
                 if(hidden){
-                    alert("hidden is true");
                     $("#friendsTable").show();
                     hidden = false;
                 }
                 else{
-                    alert("hidden is false");
                     $("#friendsTable").hide();
                     hidden = true;
 

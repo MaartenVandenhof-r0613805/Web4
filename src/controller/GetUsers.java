@@ -11,30 +11,29 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class GetSessionId extends RequestHandler {
+public class GetUsers extends RequestHandler {
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
-        HttpSession session = request.getSession(false);
-        Person user = (Person) session.getAttribute("user");
+        ArrayList<Person> persons;
 
-
+        persons = (ArrayList<Person>) personService.getPersons();
         try{
-            String json = toJSON(user);
-
-            response.setContentType("application/json/getSessionId");
+            String json = toJSON(persons);
+            response.setContentType("application/json");
             response.getWriter().write(json);
         } catch (JsonProcessingException e){
             e.printStackTrace();
         } catch (IOException e){
             e.printStackTrace();
         }
-
+        response.addHeader("Access-Control-Allow-Origin", "http://localhost:4200");
         return null;
     }
 
     @JsonIgnore
     public String toJSON(Object list) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
+
         return mapper.writeValueAsString(list);
     }
 }
