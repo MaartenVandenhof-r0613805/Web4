@@ -16,6 +16,9 @@
 
 <body>
     <header>
+        <nav>
+            <a href="register.jsp">Register</a>
+        </nav>
     </header>
     <div id="login">
        <h2>Login</h2>

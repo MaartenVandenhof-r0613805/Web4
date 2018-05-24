@@ -191,12 +191,10 @@ public class Person {
 			if (possiblefriend.getUserId().equals(id)){
 				if(messages.get(id) != null){
 					messages.get(id).add(message);
-					System.out.println("ID IS NOT NULL");
 
 				} else {
 					friendMessages.add(message);
 					messages.put(id, friendMessages);
-					System.out.println("ID IS NULL");
 				}
 			}
 		}

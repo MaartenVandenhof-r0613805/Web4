@@ -16,9 +16,6 @@
 
 <body>
     <header>
-        <nav>
-            <a href="register.jsp">Register</a>
-        </nav>
     </header>
     <div id="login">
        <h2>Login</h2>
@@ -31,17 +28,12 @@
                 </ul>
             </div>
         </c:if>
-        <form action="Controller?action=LogIn" method="post">
-        <label for="email">Name: </label>
-        <input type="text" id="email" name="email">
-        <label for="password">Password: </label>
-        <input type="text" id="password" name="password">
-        <input type="submit" id="loginbtn" value="Login">
-        </form>
-        <form action="Controller?action=LogIn" method="post" id="guestform">
-            <input type="submit" id="guestbtn" value="Login as Guest">
-            <input type="text" name="email" class="guestinput" value="guest@ucll.be">
-            <input type="text" name="password" class="guestinput" value="t">
+        <form action="Controller?action=Register" method="post">
+            <label for="firstName">Name</label><input type="text" id="firstName">
+            <label for="lastName">Last Name</label><input type="text" id="lastName">
+            <label for="email">Email</label><input type="text" id="email">
+            <label for="password">Password</label><input type="text" id="password">
+            <label for="passRepeat">Repeat Password</label><input type="text" id="passRepeat">
         </form>
     </div>
     <script src="/js/login.js"></script>
