@@ -6,7 +6,6 @@ import domain.PersonService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.servlet.http.HttpSessionListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +28,8 @@ public class LogIn extends RequestHandler {
 		}
 		
 		if (errors.size() == 0) {
-			PersonService personService = super.getPersonService();
+			System.out.println("No errors");
+
 			Person person = personService.getAuthenticatedUser(email, password);
 			if (person != null) {
 				createSession(person, request, response);

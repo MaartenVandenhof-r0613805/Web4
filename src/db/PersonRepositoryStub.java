@@ -69,7 +69,7 @@ public class PersonRepositoryStub implements PersonRepository {
 	
 	public Person getAuthenticatedUser(String email, String password) {
 		Person person = get(email);
-		
+
 		if (person != null && person.isCorrectPassword(password)) {
 			return person;
 		}

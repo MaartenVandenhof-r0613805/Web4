@@ -673,8 +673,7 @@ header form input:hover{
     margin-top: 300px;
     display: flex;
     flex-direction: column;
-    width: 50%;
-    width: 580px;
+    width: 595px;
     background-color: #FFF;
     border: 3px solid #00189a;
     color: grey;
@@ -697,7 +696,6 @@ header form input:hover{
     float: none;
     width: 30%;
     display: block;
-    margin: 0px;
     margin-left: auto;
     margin-right: auto;
     font-family: 'Roboto Slab', serif;    

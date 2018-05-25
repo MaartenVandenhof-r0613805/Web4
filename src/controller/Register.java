@@ -10,7 +10,6 @@ public class Register extends RequestHandler {
 
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("IS IN METHOD");
         try{
             Person person = new Person();
             String email = request.getParameter("email");
@@ -21,12 +20,12 @@ public class Register extends RequestHandler {
             person.setFirstName(name);
             person.setLastName(lastName);
             person.setUserId(email);
-            person.setPassword(password);
+            person.setHashedPassword(password);
             person.setRole(Role.LID);
             this.personService.addPerson(person);
         } catch (Exception e){
             e.printStackTrace();
         }
-        return null;
+        return "login.jsp";
     }
 }

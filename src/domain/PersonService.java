@@ -32,6 +32,8 @@ public class PersonService {
 	}
 	
 	public Person getAuthenticatedUser(String email, String password) {
+		System.out.println("Authenticated user method");
+
 		return getPersonRepository().getAuthenticatedUser(email, password);
 	}
 
