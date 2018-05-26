@@ -32,7 +32,7 @@
             </div>
         </c:if>
         <form action="Controller?action=LogIn" method="post">
-        <label for="email">Name: </label>
+        <label for="email">Email: </label>
         <input type="text" id="email" name="email">
         <label for="password">Password: </label>
         <input type="text" id="password" name="password">
