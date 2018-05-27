@@ -16,8 +16,9 @@ public class AddFriend extends RequestHandler {
             Person user = (Person) session.getAttribute("user");
             Person friend = personService.getPerson(email);
             user.addFriend(friend);
+            friend.addFriend(user);
             personService.updatePersons(user);
-            System.out.println(user.getFriendlist().size());
+            personService.updatePersons(friend);
         } catch (Exception e){
             e.printStackTrace();
         }

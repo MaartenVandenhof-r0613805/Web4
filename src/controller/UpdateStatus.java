@@ -15,8 +15,6 @@ public class UpdateStatus extends RequestHandler  {
         Person person = (Person) session.getAttribute("user");
         person.setStatus(status);
         personService.updatePersons(person);
-        System.out.println("JAVA DONE");
-        System.out.println(personService.getPerson(person.getUserId()).getStatus());
         return null;
     }
 }

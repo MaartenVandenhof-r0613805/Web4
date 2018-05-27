@@ -26,7 +26,7 @@ public class GetMessages extends RequestHandler {
 
         try{
             String json = toJSON(messages);
-            response.setContentType("application/json/messages");
+            response.setContentType("application/json");
             response.getWriter().write(json);
         } catch (JsonProcessingException e){
             e.printStackTrace();

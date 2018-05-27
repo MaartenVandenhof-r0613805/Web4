@@ -285,11 +285,9 @@ function userDisplay() {
     console.log("after navbar");
     var li1 = document.createElement('li');
     var li2 = document.createElement('li');
-    console.log("UseDisplay");
     xmlRequest.open("GET", "Controller?action=GetSessionId", true);
     xmlRequest.onreadystatechange = function (ev) {
         var serverResponse = JSON.parse(xmlRequest.responseText);
-        console.log(serverResponse);
         li1.innerHTML = "Welcome " + serverResponse.firstName;
         li2.innerHTML = "<a href=\"index.html\">Blog</a>";
         navbar.appendChild(li1);
