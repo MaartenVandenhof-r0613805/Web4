@@ -17,7 +17,7 @@
 <body>
     <header>
         <nav>
-            <a href="register.jsp">Register</a>
+            <a id="toRegister" href="register.jsp">Register</a>
         </nav>
     </header>
     <div id="login">

@@ -618,6 +618,13 @@ div div p{
     visibility: hidden;
 }
 
+#toRegister{
+    padding: 5px;
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
+    background-color: #00189a;
+    text-decoration: none;
+}
 
 
 header form{
